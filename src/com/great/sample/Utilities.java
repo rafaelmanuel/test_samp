@@ -169,7 +169,7 @@ public class Utilities extends Assignment{
 			
 			double temp = 0;
 			for(int ctr = 0 ;ctr  < array.length-1 ; ctr++){
-				for(int ctr1 = 0 ;ctr1  < array.length-2 ; ctr1++){
+				for(int ctr1 = 0 ;ctr1  < array.length-1 ; ctr1++){
 					if(array[ctr1] < array[ctr1+1]){
 						temp = array[ctr1];
 						array[ctr1] = array[ctr1+1];
@@ -193,7 +193,7 @@ public class Utilities extends Assignment{
 			
 			double temp = 0;
 			for(int ctr = 0 ;ctr  < array.length-1 ; ctr++){
-				for(int ctr1 = 0 ;ctr1  < array.length-2 ; ctr1++){
+				for(int ctr1 = 0 ;ctr1  < array.length-1 ; ctr1++){
 					if(array[ctr1] > array[ctr1+1]){
 						temp = array[ctr1];
 						array[ctr1] = array[ctr1+1];
@@ -210,16 +210,17 @@ public class Utilities extends Assignment{
 			List<Integer> numList = new ArrayList<Integer>();
 			int[] count = new int[5];
 			if("essay 1".equals(exam.toLowerCase())){
+				
 				for(Student student : list){
-					if(student.getEssay1() >= this.percentage(80, this.essay1))
+					if(student.getEssay1() > this.percentage(80, this.getEssay1()))
 						count[0] ++;
-					else if(student.getEssay1() >= this.percentage(60, this.essay1))
+					else if(student.getEssay1() > this.percentage(60, this.getEssay1()))
 						count[1] ++;
-					else if(student.getEssay1() >= this.percentage(40, this.essay1))
+					else if(student.getEssay1() > this.percentage(40, this.getEssay1()))
 						count[2] ++;
-					else if(student.getEssay1() >= this.percentage(20, this.essay1))
+					else if(student.getEssay1() > this.percentage(20, this.getEssay1()))
 						count[3] ++;
-					else if(student.getEssay1() >= this.percentage(0, this.essay1))
+					else if(student.getEssay1() > this.percentage(0, this.getEssay1()))
 						count[4] ++;				
 				}
 				
@@ -229,15 +230,15 @@ public class Utilities extends Assignment{
 				return numList;
 			}else if("essay 2".equals(exam.toLowerCase())){
 				for(Student student : list){
-					if(student.getEssay2() >= this.percentage(80, this.getEssay2()))
+					if(student.getEssay2() > this.percentage(80, this.getEssay2()))
 						count[0] ++;
-					else if(student.getEssay2() >= this.percentage(60, this.getEssay2()))
+					else if(student.getEssay2() > this.percentage(60, this.getEssay2()))
 						count[1] ++;
-					else if(student.getEssay2() >= this.percentage(40, this.getEssay2()))
+					else if(student.getEssay2() > this.percentage(40, this.getEssay2()))
 						count[2] ++;
-					else if(student.getEssay2() >= this.percentage(20, this.getEssay2()))
+					else if(student.getEssay2() > this.percentage(20, this.getEssay2()))
 						count[3] ++;
-					else if(student.getEssay2() >= this.percentage(0, this.getEssay2()))
+					else if(student.getEssay2() > this.percentage(0, this.getEssay2()))
 						count[4] ++;				
 				}
 				
@@ -247,15 +248,15 @@ public class Utilities extends Assignment{
 				return numList;
 			}else if("test 1".equals(exam.toLowerCase())){
 				for(Student student : list){
-					if(student.getTest1() >= this.percentage(80, this.getTest1()))
+					if(student.getTest1() > this.percentage(80, this.getTest1()))
 						count[0] ++;
-					else if(student.getTest1() >= this.percentage(60, this.getTest1()))
+					else if(student.getTest1() > this.percentage(60, this.getTest1()))
 						count[1] ++;
-					else if(student.getTest1() >= this.percentage(40, this.getTest1()))
+					else if(student.getTest1() > this.percentage(40, this.getTest1()))
 						count[2] ++;
-					else if(student.getTest1() >= this.percentage(20, this.getTest1()))
+					else if(student.getTest1() > this.percentage(20, this.getTest1()))
 						count[3] ++;
-					else if(student.getTest1() >= this.percentage(0, this.getTest1()))
+					else if(student.getTest1() > this.percentage(0, this.getTest1()))
 						count[4] ++;				
 				}
 				
@@ -265,15 +266,15 @@ public class Utilities extends Assignment{
 				return numList;
 			}else if("test 1".equals(exam.toLowerCase())){
 				for(Student student : list){
-					if(student.getTest2() == 5)
+					if(student.getTest2() > this.percentage(80, this.getTest2()))
 						count[0] ++;
-					else if(student.getTest2() == 4)
+					else if(student.getTest2() > this.percentage(60, this.getTest2()))
 						count[1] ++;
-					else if(student.getTest2() == 3)
+					else if(student.getTest2() > this.percentage(40, this.getTest2()))
 						count[2] ++;
-					else if(student.getTest2() == 2)
+					else if(student.getTest2() > this.percentage(20, this.getTest2()))
 						count[3] ++;
-					else if(student.getTest2() == 1)
+					else if(student.getTest2() > this.percentage(0, this.getTest2()))
 						count[4] ++;				
 				}
 				
@@ -283,15 +284,15 @@ public class Utilities extends Assignment{
 				return numList;
 			}else if("final".equals(exam.toLowerCase())){
 				for(Student student : list){
-					if(student.getFinalGrade() == 5)
+					if(student.getFinalGrade() > this.percentage(80, this.getFinalGrade()))
 						count[0] ++;
-					else if(student.getFinalGrade() == 4)
+					else if(student.getFinalGrade() > this.percentage(60, this.getFinalGrade()))
 						count[1] ++;
-					else if(student.getFinalGrade() == 3)
+					else if(student.getFinalGrade() > this.percentage(40, this.getFinalGrade()))
 						count[2] ++;
-					else if(student.getFinalGrade() == 2)
+					else if(student.getFinalGrade() > this.percentage(20, this.getFinalGrade()))
 						count[3] ++;
-					else if(student.getFinalGrade() == 1)
+					else if(student.getFinalGrade() > this.percentage(0, this.getFinalGrade()))
 						count[4] ++;				
 				}
 				

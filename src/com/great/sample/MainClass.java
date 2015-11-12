@@ -83,6 +83,9 @@ public class MainClass {
 						Student student = util.searchStudent(list, studentName);
 						if(student != null){
 							int points = student.getEssay1() + student.getEssay2() + student.getTest1() + student.getTest2() + student.getFinalGrade();
+							int totalPoint , totalPossible ;
+							totalPoint = student.getEssay1() + student.getEssay2() + student.getTest1() + student.getTest2() + student.getFinalGrade();
+							totalPossible = util.getEssay1() + util.getEssay2() + util.getTest1() + util.getTest2() + util.getFinalGrade();
 							
 							System.out.printf("Grades for %s %s\n\n", student.getFirstName() , student.getLastName());
 							System.out.println("Assignment\t\tPoints\t\tPossible");
@@ -91,7 +94,8 @@ public class MainClass {
 							System.out.printf("test 1   \t\t  %d\t\t   %d\n" , student.getTest1() , util.getTest1());
 							System.out.printf("essay 2   \t\t  %d\t\t   %d\n" , student.getEssay2() , util.getEssay2());
 							System.out.printf("test 2   \t\t  %d\t\t   %d\n" , student.getTest2() , util.getTest2());
-							System.out.printf("final    \t\t  %d\t\t   %d\n\n" , student.getFinalGrade() , util.getFinalGrade());
+							System.out.printf("final    \t\t  %d\t\t   %d\n" , student.getFinalGrade() , util.getFinalGrade());
+							System.out.printf("total    \t\t  %d\t\t   %d\n\n" , totalPoint , totalPossible);
 							System.out.printf("Final Grade: %s \n", util.gradeRating(points));
 						}
 					}catch(Exception e){
@@ -109,6 +113,8 @@ public class MainClass {
 					System.out.printf("C: %d\n" , util.testScores(exam, list).get(2));
 					System.out.printf("D: %d\n" , util.testScores(exam, list).get(3));
 					System.out.printf("E: %d\n" , util.testScores(exam, list).get(4));
+				}else if(command.trim().toLowerCase().equals("exit")){
+					flag = false;
 				}
 			}
 		} catch (Exception e) {
